@@ -50,9 +50,30 @@ En VS Code basta con abrir la carpeta del repo (File > Open Folder) y darle Run.
 
 - Cuadrado **amarillo**: tesoro, suma un punto y reaparece en otro lugar.
 - Cuadrado **rojo**: enemigo, cae desde arriba y resta una vida.
-- Con 3 vidas perdidas aparece "Fin del juego".
+- Se gana llegando a **50 puntos**. Con 3 vidas perdidas se termina la partida.
 
 Las teclas se leen sobre la ventana del juego, no sobre la terminal: hay que hacer clic en la ventana primero.
+
+## Dificultad
+
+Cada 10 puntos se sube de nivel: cae un enemigo más y todos bajan más rápido.
+
+| Nivel | Puntos | Enemigos | Velocidad |
+|-------|--------|----------|-----------|
+| 1 | 0 - 9 | 1 | 15 |
+| 2 | 10 - 19 | 2 | 18 |
+| 3 | 20 - 29 | 3 | 21 |
+| 4 | 30 - 39 | 4 | 24 |
+| 5 | 40 - 49 | 5 | 27 |
+
+Para cambiar el balance se tocan estas dos líneas de `juego_v2.py`:
+
+```python
+vel_enemigo = 15 + nivel * 3
+while len(enemigos) < 1 + nivel:
+```
+
+Y `vidas = 3` cerca del inicio si se quiere más margen.
 
 ## Si algo falla
 
