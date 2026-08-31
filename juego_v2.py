@@ -5,7 +5,7 @@ import random
 W = 1000
 H = 500
 
-personaje = cv2.imread("personaje.png")
+personaje = cv2.imread("33670451.png")
 personaje = cv2.resize(personaje, (80, 80))
 
 ancho_p = personaje.shape[1]
